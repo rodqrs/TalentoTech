@@ -1,0 +1,224 @@
+body{
+    background-color: #F5EDE3;
+}
+.header{
+    text-align: center;
+    color: darkgreen;
+    font-size: 4vw;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra del texto */
+}
+.carrusel {
+    display: flex; /* Utiliza el modelo de caja flexible (flexbox) para organizar las imágenes en una fila. */
+    width: 90%; /* Establece el ancho del carrusel al 90% del contenedor padre (por ejemplo, el body). */
+    height: 430px; /* Define una altura fija para el carrusel. */
+    margin: 0 auto; /* Centra el carrusel horizontalmente en su contenedor padre al establecer márgenes automáticos a los lados. */
+    border-radius: 20px; /* Añade bordes redondeados con un radio de 20 píxeles para suavizar las esquinas del carrusel. */
+    margin-bottom: 40px; /* Añade un espacio de 40 píxeles por debajo del carrusel para separar visualmente del siguiente elemento. */
+    overflow: hidden; /* Previene el desbordamiento de las imágenes, asegurando que nada se salga del área visible del carrusel. */
+}
+
+.carrusel img {
+    width: 0px; /* Establece el ancho inicial de las imágenes a 0 píxeles, lo que significa que no son visibles hasta que se interactúa con ellas. */
+    flex-grow: 1; /* Permite que las imágenes crezcan para llenar el espacio disponible dentro del contenedor flex. */
+    object-fit: cover; /* Asegura que las imágenes mantengan su proporción y cubran completamente el área del contenedor, recortando si es necesario. */
+    opacity: .8; /* Establece la opacidad de las imágenes en un 80%, lo que les da un efecto semi-transparente. */
+    transition: .5s ease; /* Añade una transición suave de medio segundo para cualquier cambio en las propiedades CSS (como opacidad o tamaño) al pasar el mouse. */
+}
+
+.carrusel img:hover {
+    cursor: crosshair; /* Cambia el cursor a una cruz cuando se pasa el mouse sobre la imagen, indicando que es interactiva. */
+    width: 55%; /* Cambia el ancho de la imagen al 55% cuando se pasa el mouse sobre ella, haciéndola más grande y destacada. */
+    opacity: 1; /* Aumenta la opacidad al 100% (completamente visible) al pasar el mouse sobre la imagen. */
+    filter: contrast(120%); /* Aumenta el contraste de la imagen en un 20% al pasar el mouse, haciendo que los colores sean más vibrantes. */
+}
+@media (max-width: 600px) {
+    .carrusel {
+        width: 95%; /* Establece el ancho del carrusel al 90% del contenedor padre (por ejemplo, el body). */
+        height: 160px; /* Define una altura fija para el carrusel. */
+        margin-bottom: 20px; /* Añade un espacio de 40 píxeles por debajo del carrusel para separar visualmente del siguiente elemento. */
+    }
+}
+
+
+#nav-bar {
+    width: 90%; /* Establece el ancho del nav-bar al 90% del contenedor padre. */
+    margin: auto; /* Centra el nav-bar horizontalmente en la página. */
+    display: grid; /* Activa el modelo de diseño Grid para el nav-bar. */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Crea columnas automáticas que tienen un ancho mínimo de 150px y se expanden para llenar el espacio disponible. */
+    align-items: center; /* Alinea verticalmente los elementos dentro del grid al centro. */
+}
+
+.nav-list {
+    list-style-type: none; /* Elimina las viñetas de la lista de navegación. */
+    padding: 0; /* Elimina el padding por defecto de la lista. */
+    margin: 0; /* Elimina el margen por defecto de la lista. */
+    width: 100%; /* Establece el ancho de la lista al 100% del contenedor padre. */
+    display: contents; /* Permite que los elementos hijos se comporten como si fueran hijos directos del contenedor padre (en este caso, #nav-bar). */
+}
+.nav-item {
+    padding: 10px; /* Añade un padding de 10 píxeles alrededor del contenido para mejorar la apariencia visual. */
+    text-align: center; /* Centra el texto dentro del elemento. */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; /* Especifica las fuentes utilizadas para el texto del elemento. */
+    font-size: 4vw; /* Establece el tamaño de fuente en función del ancho de la ventana (5% del ancho). */
+    color: white; /* Establece el color del texto en blanco. */
+    cursor: pointer; /* Cambia el cursor a una mano al pasar sobre el elemento, indicando que es interactivo. */
+    margin: 5px; /* Añade un margen de 5 píxeles alrededor del elemento para separar visualmente los elementos entre sí. */
+    border-radius: 15px; /* Redondea las esquinas del elemento con un radio de 15 píxeles. */
+    background-color: gray; /* Establece un color de fondo gris para los elementos de navegación. */
+}
+.activo {
+    background-color: darkgreen;
+}
+
+
+.resultados {
+    margin: 30px auto; /* Establece un margen superior de 30px y centra horizontalmente el contenedor. */
+    width: 90%; /* Establece el ancho del contenedor al 90% del contenedor padre. */
+    border: 25px solid #08623a; /* Define el borde del contenedor. */
+    height: auto; /* Ajusta la altura automáticamente según el contenido. */
+    padding: 5px; /* Añade padding alrededor del contenido. */
+    display: flex; /* Activa Flexbox para el contenedor. */
+    flex-direction: row; /* Organiza los elementos en una fila. */
+    justify-content: space-between; /* Distribuye los elementos con espacio entre ellos. */
+    gap: 10px; /* Espacio entre elementos. */
+    align-items: center; /* Alinea verticalmente los elementos dentro del contenedor. */
+    border-radius: 20px; /* Añade bordes redondeados con un radio de 10px. */
+}
+
+.zonatex {
+    background-color: #F5EDE3; /* Color de fondo para la sección zonatex. */
+    flex: 2; /* Ocupa el doble de espacio en comparación con .zonaimg (ajusta según sea necesario). */
+}
+.zonatex h2 {
+    font-size: 5lvw;
+    color: #08623a;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; /* Especifica las fuentes utilizadas para el texto del encabezado h3. Se utilizará la primera fuente disponible en la lista. */
+    text-align: center;
+    margin: 10px 40px; /* Añade un margen superior de 30px y márgenes izquierdo y derecho de 40px, separando el encabezado de otros elementos. */
+}
+
+.zonatex p {
+    color: #08623a;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; /* Especifica las fuentes utilizadas para el texto de los párrafos. Se utilizará la primera fuente disponible en la lista. */
+    font-size: 3.5vw; /* Establece el tamaño de fuente en un 3.5% del ancho de la ventana, permitiendo que el texto sea responsivo. */
+    text-align: justify;
+    margin: 0px 10px; /* Añade un margen superior de 20px y márgenes izquierdo y derecho de 40px, separando el párrafo de otros elementos. */
+}
+
+
+.zonaimg {
+    background-color: #F5EDE3; /* Color de fondo para la zona de imagen. */
+    flex: 1; /* Ocupa la mitad del espacio en comparación con .zonatex (ajusta según sea necesario). */
+    width: 100%; /* El contenedor ocupará el 100% del ancho disponible. */
+   
+    display: flex; /* Permite centrar contenido si es necesario. */
+    justify-content: center; /* Centra horizontalmente el contenido. */
+}
+
+.zonaimg img {
+    max-width: 100%; /* Asegura que la imagen no exceda el ancho del contenedor. */
+    height: auto; /* Mantiene la proporción de la imagen. */
+    border-radius: 15px; /* Añade bordes redondeados con un radio de 10px. */
+}
+
+@media (max-width: 600px) {
+    .zonaimg img {
+        /* Establece un ancho mínimo para la imagen (ajusta según sea necesario). */
+        max-width: 100%; /* Permite que la imagen crezca más allá del 100% si es necesario. */
+       
+    }
+}
+
+
+
+img {
+    float: right; /* Hace que las imágenes floten a la derecha del contenedor, permitiendo que el texto fluya a su alrededor. Esto puede ser útil para crear un diseño más dinámico y visualmente atractivo. */
+}
+
+@media (max-width: 600px) {
+
+    .resultados {
+        border: 10px solid #08623a; /* Define el borde del contenedor. */
+        border-radius: 25px; /* Añade bordes redondeados con un radio de 10px. */
+    }
+
+    h3 {
+        color: #08623a;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; /* Especifica las fuentes utilizadas para el texto del encabezado h3. Se utilizará la primera fuente disponible en la lista. */
+        font-size: 7vw; /* Establece el tamaño de fuente en un 4% del ancho de la ventana, lo que permite que el texto sea responsivo. */
+        margin: 1px 2px; /* Añade un margen superior de 30px y márgenes izquierdo y derecho de 40px, separando el encabezado de otros elementos. */
+    }
+    
+    p {
+        color: #08623a;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; /* Especifica las fuentes utilizadas para el texto de los párrafos. Se utilizará la primera fuente disponible en la lista. */
+        font-size: 5vw; /* Establece el tamaño de fuente en un 3.5% del ancho de la ventana, permitiendo que el texto sea responsivo. */
+        margin: 1px 2px; /* Añade un margen superior de 20px y márgenes izquierdo y derecho de 40px, separando el párrafo de otros elementos. */
+    }
+    
+    img {
+        float: right; /* Hace que las imágenes floten a la derecha del contenedor, permitiendo que el texto fluya a su alrededor. Esto puede ser útil para crear un diseño más dinámico y visualmente atractivo. */
+    }
+
+}
+
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 250px;
+    margin: 0 auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+    margin-bottom: 5px;
+    padding: 3px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-form button {
+    padding: 3px;
+    border: none;
+    background-color: #08623a;
+    color: #fff;
+    border-radius: 5px;
+}
+#contacto h3 {
+    margin-top: 2%;
+    color: #08623a;
+    text-align: center;
+    font-size: 1.5rem; /* Ajusta el tamaño de la fuente a 2 rems */
+}
+
+
+footer p {
+    text-align: center;
+    font-size: 1rem;
+    color: #08623a; /* Cambia el color del texto del pie de página */
+}
+footer h3 {
+    text-align: center;
+    font-size: 1rem;
+    color: #08623a; /* Cambia el color del texto del pie de página */
+}
+.redes {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente los iconos */
+    margin-top: 20px; /* Espacio superior */
+}
+
+.redes a {
+    color: #fff; /* Color del icono */
+    background-color: #08623a; /* Fondo del icono */
+    border-radius: 50%; /* Bordes redondeados */
+    padding: 10px; /* Espaciado interno */
+    margin: 0 10px; /* Espacio entre iconos */
+    text-decoration: none; /* Sin subrayado */
+    transition: background-color 0.3s; /* Transición suave */
+}
+
+.redes a:hover {
+    background-color: #891de2; /* Color al pasar el ratón */
+}
